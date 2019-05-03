@@ -2,13 +2,15 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
 		<title>Training</title>
 		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="css/slick.css">
+		<link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
-	<body>
+	<body class="page">
 
 		<!-- site header -->
 		<header class="header">
@@ -16,16 +18,21 @@
 				<div class="header__logo">
 					<img src="images/logos/logo.png" alt="zeedapp"/>
 				</div>
+				<div class="burger-menu">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
 				<div class="header__right">
 					<ul class="menu">
-						<li class="menu__item"><a href="" class="menu__item__link menu__item__link--white">Home</a></li>
-						<li class="menu__item"><a href="" class="menu__item__link menu__item__link--white">Features</a></li>
-						<li class="menu__item"><a href="" class="menu__item__link menu__item__link--white">Screenshot</a></li>
-						<li class="menu__item"><a href="" class="menu__item__link menu__item__link--white">Pricing</a></li>
-						<li class="menu__item"><a href="" class="menu__item__link menu__item__link--white">Team</a></li>
-						<li class="menu__item"><a href="" class="menu__item__link menu__item__link--white">Download</a></li>
-						<li class="menu__item"><a href="" class="menu__item__link menu__item__link--white">Blog</a></li>
-						<li class="menu__item"><a href="" class="menu__item__link menu__item__link--white">Contact</a></li>
+						<li class="menu__item"><a href="#1" class="menu__item__link menu__item__link--white active">Home</a></li>
+						<li class="menu__item"><a href="#2" class="menu__item__link menu__item__link--white">Features</a></li>
+						<li class="menu__item"><a href="#3" class="menu__item__link menu__item__link--white">Screenshot</a></li>
+						<li class="menu__item"><a href="#4" class="menu__item__link menu__item__link--white">Pricing</a></li>
+						<li class="menu__item"><a href="#5" class="menu__item__link menu__item__link--white">Team</a></li>
+						<li class="menu__item"><a href="#6" class="menu__item__link menu__item__link--white">Download</a></li>
+						<li class="menu__item"><a href="#7" class="menu__item__link menu__item__link--white">Blog</a></li>
+						<li class="menu__item"><a href="#8" class="menu__item__link menu__item__link--white">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -33,8 +40,8 @@
 		<!-- end site header -->
 
 		<!-- slideshow slider -->
-		<div class="slideshow">
-			<div class="container">
+		<div class="slideshow hp-section" id="1">
+			<div class="container d-inline">
 				<div class="slideshow__item d-inline">
 					<div class="slideshow-img">
 						<img src="images/slider/slider-left-img.png" alt="zeedapp"/>
@@ -42,7 +49,7 @@
 					<div class="slideshow-text text-white text-right">
 						<h1>Who else wants to user</h1>
 						<p>and use our zeed app !</p>
-						<a href="" class="slideshow-button button button--round--edge text-white">
+						<a href="https://www.youtube.com/watch?v=8qs2dZO6wcc" class="slideshow-button button button--round--edge text-white popup-youtube">
 							<i class="fas fa-play text-center"></i>
 							<span>Watch the video</span>
 						</a>
@@ -107,7 +114,7 @@
 		<!-- end about app -->
 
 		<!-- features -->
-		<div class="features section bg-gray">
+		<div class="features section bg-gray hp-section" id="2">
 			<div class="container">
 				<div class="section__title text-center">
 					<h2>Features</h2>
@@ -192,28 +199,28 @@
 							<div class="metric-icon">
 								<i class="fas fa-users"></i>
 							</div>
-							<h2 class="text-white">10k</h2>
+							<h2 class="text-white"><span class="count">10</span>k</h2>
 							<p class="text-white">Happy clients</p>
 						</li>
 						<li class="metrics_item">
 							<div class="metric-icon">
 								<i class="fas fa-book"></i>
 							</div>
-							<h2 class="text-white">978</h2>
+							<h2 class="text-white"><span class="count">978</span></h2>
 							<p class="text-white">Projects complete</p>
 						</li>
 						<li class="metrics_item">
 							<div class="metric-icon">
 								<i class="fas fa-coffee"></i>
 							</div>
-							<h2 class="text-white">150k</h2>
+							<h2 class="text-white"><span class="count">150</span>k</h2>
 							<p class="text-white">Cups of coffee</p>
 						</li>
 						<li class="metrics_item">
 							<div class="metric-icon">
 								<i class="fas fa-trophy"></i>
 							</div>
-							<h2 class="text-white">100</h2>
+							<h2 class="text-white"><span class="count">100</span></h2>
 							<p class="text-white">Winning awards</p>
 						</li>
 					</ul>
@@ -222,7 +229,7 @@
 		<!-- end metrcs -->
 
 		<!-- screenshots -->
-		<div class="section text-center bg-gray">
+		<div class="section text-center bg-gray hp-section" id="3">
 			<div class="container">
 				<div class="section__title text-center">
 					<h2>Screenshot</h2>
@@ -322,13 +329,17 @@
 					<h2 class="text-white">Watch Video Demo</h2>
 					<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
 				</div>
-				<a href="#" class="video-play-button text-center"><i class="fas fa-play text-center"></i></a>
+				<a href="#" class="video-play-button text-center"><i class="fas fa-play text-center"></i>
+					<span class="circle circle-one"></span>
+					<span class="circle circle-two"></span>
+					<span class="circle circle-three"></span>
+				</a>
 			</div>
 		</section>
 		<!-- end Video -->
 
 		<!-- Pricing -->
-		<div class="plan section text-center">
+		<div class="plan section text-center hp-section" id="4">
 			<div class="container">
 				<div class="section__title text-center">
 					<h2>Pricing Plan</h2>
@@ -389,7 +400,7 @@
 		<!-- End Pricing -->
 
 		<!-- Team -->
-		<section class=" team bg-gray section text-center">
+		<section class=" team bg-gray section text-center hp-section" id="5">
 			<div class="container">
 				<div class="section__title text-center">
 					<h2>Our Amazing Team</h2>
@@ -450,7 +461,7 @@
 		<!-- End Team -->
 
 		<!-- App -->
-		<section class="app section bg-violet text-center">
+		<section class="app section bg-violet text-center hp-section" id="6">
 			<div class="container">
 				<div class="section__title text-center text-white">
 					<h2 class="text-white">Our Amazing Team</h2>
@@ -466,7 +477,7 @@
 		<!-- End App -->
 
 		<!-- latest news -->
-		<section class="news section">
+		<section class="news section hp-section" id="7">
 			<div class="container">
 				<div class="section__title text-center">
 					<h2>Latest News</h2>
@@ -545,7 +556,7 @@
 		<!-- end partners -->
 
 		<!-- contact -->
-		<section class="contact section text-center">
+		<section class="contact section text-center hp-section"id="8">
 			<div class="container">
 				<div class="section__title text-center">
 					<h2>Contact Us</h2>
@@ -595,11 +606,19 @@
 		</section>
 		<!-- end contact -->
 
+		<!-- Footer -->
+		<footer class="text-center site-footer">
+			<div class="container">
+				<p class="copyright text-white">Copyright ©2019 All rights reserved | This template is made with <i class="far fa-heart"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+			</div>
+		</footer>
+		<!-- End Footer -->
 
 		<!-- scripts here -->
 		<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
         crossorigin="anonymous"></script>
 		<script src="js/slick.min.js"></script>
+		<script src="js/jquery.magnific-popup.min.js"></script>
 		<script src="js/scripts.js"></script>
 	</body>
 </html>

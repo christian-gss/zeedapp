@@ -38,6 +38,7 @@ h3 {
 a {
 	text-decoration: none;
 	outline: none;
+	cursor: pointer;
 }
 
 img {
@@ -57,6 +58,7 @@ ul {
 	width: 1170px;
 	padding: 15px;
 	margin: 0 auto;
+	box-sizing: border-box;
 }
 
 .d-inline {
@@ -64,6 +66,10 @@ ul {
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+}
+
+.d-none {
+	display: none;
 }
 
 .text-white {
@@ -201,10 +207,36 @@ Header styles
 	background: #fff;
 	left: 0;
 	bottom: 0;
+	opacity: 0;
+	transition: all .25s ease-in-out;
+	-moz-transition: all .25s ease-in-out;
+	-webkit-transition: all .25s ease-in-out;
+}
+
+.menu__item__link.active:before {
+	opacity: 1;
 }
 
 .menu__item__link--white {
 	color: #fff;
+}
+
+.burger-menu {
+    width: 35px;
+    height: 25px;
+    display: none;
+    cursor: pointer;
+}
+
+.burger-menu div {
+	width: 100%;
+    height: 3px;
+    border-radius: 3px;
+    background: #fff;
+}
+
+.burger-menu div:nth-child(2){
+	margin: 7px 0;
 }
 
 /**********************
@@ -215,14 +247,18 @@ Slider styles
 	position: relative;
 	background: #5d12f8;
 	padding-top: 80px;
-	height: 110vh;
 }
 
-.slideshow__item.d-inline {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	align-items: flex-start;
+.slideshow .container {
+	height: 85vh;
+}
+
+.slideshow .slideshow__item.d-inline {
+    align-items: flex-start;
+}
+
+.slideshow-img, .slideshow-text  {
+    width: 50%;
 }
 
 .slideshow-text p {
@@ -236,10 +272,10 @@ Slider styles
 }
 
 .slideshow-button {
-	font-size: 25px;
+	font-size: 20px;
     max-width: 300px;
     width: 100%;
-    padding: 10px 15px;
+    padding: 14px;
     box-sizing: border-box;
     border: 2px solid #fff;
 }
@@ -456,6 +492,10 @@ Testimonials styles
 	margin: 0 5px;
 }
 
+.testi-social a:hover {
+	color: #5a10fb;
+}
+
 .testimonials__carousel .slick-dots {
 	margin-top: 50px;
 }
@@ -488,6 +528,45 @@ Video styles
 .video-play-button i {
 	font-size: 25px;
 	color: #7f21e6;
+}
+
+@-webkit-keyframes waves {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.video-play-button .circle {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: -1px;
+	margin: auto;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    border: 1px solid #fff;
+    border-radius: 100%;
+}
+
+.circle-one {
+  animation: waves 2.5s linear infinite;
+    animation-delay: .1s;
+}
+
+.circle-two {
+  animation: waves 2.5s linear .7s forwards,
+}
+
+.circle-three {
+  animation: waves 2.5s linear 1.3s forwards;
 }
 
 /**********************
@@ -586,9 +665,17 @@ Team styles
     font-weight: 500;
 }
 
+.social-links a:hover {
+	color: #5a10fb;
+}
+
 /**********************
 App styles
 **********************/
+
+.app h2:before, .app h2:after {
+	background-color:#fff;
+}
 
 .app .container {
 	position: relative;
@@ -606,6 +693,11 @@ App styles
 .app-button i {
 	margin-right: 5px;
 	font-size: 20px;
+}
+
+.app-button:hover {
+	background: #fff;
+	color: #5c1ef9;
 }
 
 /**********************
@@ -648,6 +740,10 @@ ul.news-list__meta li i {
 	color: #232323;
 }
 
+.news-list__title:hover {
+	color: #5a10fb;
+}
+
 /**********************
 Partners styles
 **********************/
@@ -683,8 +779,10 @@ Contact styles
 }
 
 .contact__details .social-links li {
-	margin-right: 0;
-	margin-left: 5px;
+    margin-right: 0;
+    margin-left: 0;
+    letter-spacing: 0;
+    padding: 0;
 }
 
 .contact__details .social-links a {
@@ -701,6 +799,7 @@ Contact styles
     font-size: 15px;
     color: #591efb;
 }
+
 
 /**********************
 Contact form styles
@@ -744,7 +843,199 @@ input.form-btn {
     border-radius: 5px;
     font-size: 14px;
     margin: 10px;
+    cursor: pointer;
 }
+
+input.form-btn:hover, .contact__details .social-links a:hover {
+	background-color: #444; 
+}
+
+/**********************
+Footer styles
+**********************/
+
+footer.site-footer {
+    background-color: #5a10fb;
+    padding: 15px 0;
+}
+
+footer.site-footer p {
+    padding: 0;
+    margin: 0;
+}
+
+p.copyright a {
+    font-size: 12px;
+    color: #111;
+}
+
+
+
+/**********************
+Media Queries
+**********************/
+
+@media only screen and (max-width: 1199px) {
+
+	h1 {
+		font-size: 4.0033361134278564vw;
+	}
+
+	.container {
+		width: 970px;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+
+	.container {
+		width: 750px;
+	}
+
+	.header .d-inline {
+	    justify-content: space-between;
+	}
+
+	.burger-menu {
+		display: block;
+	}
+
+	.header__right {
+	    position: absolute;
+	    width: 100%;
+	    left: 0;
+	    top: 78px;
+	    background: #5c1ef9;
+	}
+
+	li.menu__item {
+	    display: block;
+	    padding: 10px;
+	    text-align: center;
+	    border-bottom: 1px solid #fff;
+	}
+
+	li.menu__item:first-child {
+		border-top: 1px solid #fff;
+	}
+
+	.feature__left, .feature__right {
+	    width: 50%;
+	    padding: 0 15px;
+	}
+
+	.team-list, ul.app-buttons.d-inline, .news-lists {
+	    flex-wrap: wrap;
+	}
+
+	.team__member {
+	    width: calc(50% - 20px);
+	    margin: 15px 0;
+	}
+
+	.app-button {
+	    margin: 10px 30px;
+	}
+
+	li.news-list {
+	    width: calc(50% - 15px);
+	}
+
+	.feature__middle, .header__right, .menu__item__link:before {
+		display: none;
+	}
+
+
+}
+
+@media only screen and (max-width: 767px) {
+
+	.container {
+		width: 100%;
+	}
+
+	.section {
+	    padding: 30px 0;
+	}
+
+	.service .container .service__item:first-child, .slideshow-text {
+		width: 100%;
+	}
+
+	.service__item {
+		width: calc(50% - 10px);
+		margin: 15px 0;
+	}
+
+	.plan-lists.d-inline, .contact__inner.d-inline {
+		display: block;	
+	}
+
+	.service .container.d-inline {
+		flex-wrap: wrap;
+	}
+
+	.slideshow .container {
+	    height: 60vh;
+	}
+
+	.slideshow-text {
+		text-align: left;
+	}
+
+	.plan ul.plan-lists > li {
+	    width: 100%;
+	    margin: 15px 0;
+	}
+
+	.contact__inner > div {
+	    width: 100%;
+	    margin-bottom: 30px;
+	}
+
+	.contact__inner > div:last-of-type {
+		margin-bottom: 0;
+	}
+
+	.phone-frame, .slideshow-img {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 599px) {
+
+	.about .d-inline, .features .container > .d-inline, .metrics .d-inline {
+	    flex-wrap: wrap;
+	}
+
+	.service__item {
+	    width: 100%;
+	}
+
+	.about__right {
+	    padding-left: 0;
+	    width: 100%;
+	    margin-top: 15px;
+	}
+
+	.feature__left, .feature__right, .feature__middle, .slideshow-text, .team__member, li.news-list, li.metrics_item {
+		width: 100%;
+	}
+
+	.screenshots__carousel__item img {
+	    margin: 0 auto;
+	}
+
+	.feature__middle {
+		display: block;
+	}
+
+}
+
+
+
+
+
 
 
 
